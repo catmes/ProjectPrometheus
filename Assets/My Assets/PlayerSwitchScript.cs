@@ -17,7 +17,7 @@ public class PlayerSwitchScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        print("This is Olivia's useless print statement. Yay!"); 
         //begin with bluePlayer disabled
         bluePlayer.GetComponent<PlayerControl>().enabled = false;
     }
