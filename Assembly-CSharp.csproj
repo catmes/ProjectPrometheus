@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FinishLine.cs" />
+     <Compile Include="Assets\monsterCollisionChecker.cs" />
      <Compile Include="Assets\My Assets\PlayerSwitchScript.cs" />
      <Compile Include="Assets\Scripts\BackgroundParallax.cs" />
      <Compile Include="Assets\Scripts\BackgroundPropSpawner.cs" />
@@ -73,6 +75,7 @@
      <Compile Include="Assets\Scripts\ScoreShadow.cs" />
      <Compile Include="Assets\Scripts\SetParticleSortingLayer.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\SwitchController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Development Apps/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

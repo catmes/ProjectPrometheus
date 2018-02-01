@@ -6,7 +6,7 @@ public class PlayerSwitchScript : MonoBehaviour {
 
     private bool _spaceDown = false; //Used for if the space bar has been pressed
 
-    public GameObject redPlayer, bluePlayer; //instances of each player
+    public GameObject redPlayer, bluePlayer, FinishLine; //instances of each player
 	public GameObject activePlayer;
 
 
@@ -24,6 +24,10 @@ public class PlayerSwitchScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (FinishLine.GetComponent<FinishLine> ().GetBothKidsHere) {
+			print ("Yay you won! Feel accomplished."); 
+		}
 
         //Check for Space Bar Press, switch value
         if (Input.GetKeyDown("space") && _spaceDown == false)

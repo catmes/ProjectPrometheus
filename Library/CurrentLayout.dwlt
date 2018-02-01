@@ -95,7 +95,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 98
+  controlID: 48
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 563}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 1
-  controlID: 140
+  controlID: 9
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 141
+  controlID: 10
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -366,9 +366,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7e050000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 46dcffff00000000
+    m_SelectedIDs: b053fbff
+    m_LastClickedID: -306256
+    m_ExpandedIDs: 52d7ffff46dcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -429,13 +429,12 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders:
-    - Assets/My Assets
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\othm\Documents\GitHub\ProjectPrometheus
+  m_LastProjectPath: C:\Users\Kyle\Desktop\TestMechanicFirstLevel
   m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
@@ -552,14 +551,14 @@ MonoBehaviour:
     height: 254
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 2751.820652639663
+  lastFramingTime: 4228.5974044823315
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.1099734, y: -1.7208178, z: -1.2086341}
+    m_Target: {x: 2.9726353, y: 0.308969, z: -1.3218808}
     speed: 2
-    m_Value: {x: 5.1099734, y: -1.7208178, z: -1.2086341}
+    m_Value: {x: 2.9726353, y: 0.308969, z: -1.3218808}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -587,9 +586,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 24.349197
+    m_Target: 14.33193
     speed: 2
-    m_Value: 24.349197
+    m_Value: 14.33193
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -705,7 +704,7 @@ MonoBehaviour:
     width: 447
     height: 541
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 66.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160
