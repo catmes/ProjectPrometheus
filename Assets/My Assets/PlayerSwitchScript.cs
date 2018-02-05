@@ -54,6 +54,12 @@ public class PlayerSwitchScript : MonoBehaviour {
 			activePlayer = redPlayer;
             
         }
+
+		if (activePlayer == redPlayer)
+		{
+			
+			bluePlayer.transform.Find ("Silo");
+		}
           
 
     }
