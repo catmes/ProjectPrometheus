@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSwitchScript : MonoBehaviour {
 
+    public Sprite body; 
+    public Sprite bodyI;
     private bool _spaceDown = false; //Used for if the space bar has been pressed
 
     public GameObject redPlayer, bluePlayer, FinishLine; //instances of each player
@@ -20,6 +22,7 @@ public class PlayerSwitchScript : MonoBehaviour {
         print("This is Olivia's useless print statement. Yay!"); 
         //begin with bluePlayer disabled
         bluePlayer.GetComponent<PlayerControl>().enabled = false;
+        bluePlayer.transform.Find("body").GetComponent<SpriteRenderer>().sprite = bodyI;
     }
 	
 	// Update is called once per frame
@@ -57,10 +60,18 @@ public class PlayerSwitchScript : MonoBehaviour {
 
 		if (activePlayer == redPlayer)
 		{
-			
-			bluePlayer.transform.Find ("Silo");
-		}
-          
+
+            bluePlayer.transform.Find("body").GetComponent<SpriteRenderer>().sprite = bodyI;
+            redPlayer.transform.Find("body").GetComponent<SpriteRenderer>().sprite = body;
+        }
+
+        if (activePlayer == bluePlayer)
+        {
+
+            bluePlayer.transform.Find("body").GetComponent<SpriteRenderer>().sprite = body;
+            redPlayer.transform.Find("body").GetComponent<SpriteRenderer>().sprite = bodyI;
+        }
+
 
     }
 
