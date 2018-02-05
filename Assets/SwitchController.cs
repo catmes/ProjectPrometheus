@@ -18,6 +18,7 @@ public class SwitchController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D C2D)
 	{
+		// Checks collision of switch. If red kid hits, destroys specific object.
 		print ("Hit!");
 		if (C2D.gameObject.name == "RedKid") {
 			GameObject.Destroy(monster);

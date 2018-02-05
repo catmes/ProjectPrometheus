@@ -8,6 +8,7 @@ public class monsterCollisionChecker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Ignores physics collison.
 		Physics2D.IgnoreLayerCollision (13, 14, true); 
 	}
 	
