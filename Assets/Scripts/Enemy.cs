@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 	private SpriteRenderer ren;			// Reference to the sprite renderer.
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the enemy is dead.
-	private Score score;				// Reference to the Score script.
+	//private Score score;				// Reference to the Score script.
 
 	
 	void Awake()
@@ -24,17 +24,17 @@ public class Enemy : MonoBehaviour
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		frontCheck = transform.Find("frontCheck").transform;
-		score = GameObject.Find("Score").GetComponent<Score>();
+		//score = GameObject.Find("Score").GetComponent<Score>();
 	}
 
 	void FixedUpdate ()
 	{
 		// Create an array of all the colliders in front of the enemy.
-		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position, 1);
-
+		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
 		// Check each of the colliders.
 		foreach(Collider2D c in frontHits)
 		{
+            
 			// If any of the colliders is an Obstacle...
 			if(c.tag == "Obstacle")
 			{
@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
 		if(HP <= 0 && !dead)
 			// ... call the death function.
 			Death ();
+        print(frontHits.Length);
 	}
 	
 	public void Hurt()
@@ -80,7 +81,7 @@ public class Enemy : MonoBehaviour
 		ren.sprite = deadEnemy;
 
 		// Increase the score by 100 points
-		score.score += 100;
+		//score.score += 100;
 
 		// Set dead to true.
 		dead = true;
@@ -100,12 +101,12 @@ public class Enemy : MonoBehaviour
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
 
 		// Create a vector that is just above the enemy.
-		Vector3 scorePos;
-		scorePos = transform.position;
-		scorePos.y += 1.5f;
+		//Vector3 scorePos;
+		//scorePos = transform.position;
+		//scorePos.y += 1.5f;
 
 		// Instantiate the 100 points prefab at this point.
-		Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
+		//Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
 	}
 
 

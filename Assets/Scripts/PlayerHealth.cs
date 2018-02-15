@@ -89,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
 		health -= damageAmount;
 
 		// Update what the health bar looks like.
-		UpdateHealthBar();
+		//UpdateHealthBar();
 
 		// Play a random clip of the player getting hurt.
 		int i = Random.Range (0, ouchClips.Length);
