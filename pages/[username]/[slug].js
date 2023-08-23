@@ -1,7 +1,23 @@
-import styles from '../../styles/Post.module.css'
+// Primary dependencies
+import { useContext } from 'react'
+import Link from 'next/link'
+
+// Custom components
 import PostContent from '../../components/PostContent'
+import AuthCheck from '../../components/AuthCheck'
+import HeartButton from '../../components/HeartButton'
+import Metatags from '../../components/Metatags'
+
+// Internal libraries
 import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase'
+import { UserContext } from '../../lib/context'
+
+// External libraries
 import { useDocumentData } from 'react-firebase-hooks/firestore'
+
+// Styles & assets
+import styles from '../../styles/Post.module.css'
+
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params
@@ -15,7 +31,6 @@ export async function getStaticProps({ params }) {
     post = postToJSON(await postRef.get())
 
     path = postRef.path
-
   }
 
   return {
@@ -51,8 +66,11 @@ export default function Post(props) {
 
   const post = realtimePost || props.post
 
+  const { user: currentUser } = useContext(UserContext)
+
   return (
     <main className={styles.container}>
+    <Metatags title={post.title} description={post.title} />
 
       <section>
         <PostContent post={post} />
@@ -60,11 +78,25 @@ export default function Post(props) {
 
       <aside className="card">
         <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
+          <strong>{post.heartCount || 0} {post.heartCount > 0 ? '🖤' : '🤍'}</strong>
         </p>
+
+        <AuthCheck 
+          fallback={
+            <Link href="/enter">
+              <button>🖤 Sign Up</button>
+            </Link>
+          }
+        >
+          <HeartButton postRef={postRef} />
+
+          {currentUser?.uid === post.uid && (
+            <Link href={`/admin/${post.slug}`}>
+              <button className="btn-blue">Edit Post</button>
+            </Link>
+          )}
+        </AuthCheck>
       </aside>
-
-
     </main>
   )
 }

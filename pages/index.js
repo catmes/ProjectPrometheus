@@ -15,7 +15,7 @@ import Link from 'next/link'
 import toast from 'react-hot-toast'
 
 // Max post to query per page
-const LIMIT = 1
+const LIMIT = 10
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore

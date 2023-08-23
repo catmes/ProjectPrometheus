@@ -1,7 +1,12 @@
+// Primary dependencies
+import { useEffect, useContext, useState, useCallback } from 'react'
+import Router from 'next/router'
+
+// Internal libraries
 import { auth, firestore, googleAuthProvider } from '../lib/firebase'
 import { UserContext } from '../lib/context'
 
-import { useEffect, useContext, useState, useCallback } from 'react'
+// External libraries
 import debounce from 'lodash.debounce'
 
 
@@ -60,6 +65,7 @@ function UsernameForm() {
     batch.set(usernameDoc, { uid: user.uid })
 
     await batch.commit()
+    Router.push('/')
   }
 
   const onChange = (e) => {
