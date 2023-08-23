@@ -1,29 +1,19 @@
-// react
-import { useEffect, useState } from 'react'
-//import { useAuthState } from 'react-firebase-hooks/auth'
-
-// react context
-import { UserContext } from '../lib/context'
-
-// components
-import Navbar from '../components/Navbar'
-
-//styles
-import '../styles/globals.css'
-
-// libraries
-import { Toaster } from 'react-hot-toast'
+import '../styles/globals.css';
+import Navbar from '../components/Navbar';
+import { UserContext } from '../lib/context';
+import { useUserData } from '../lib/hooks';
+import { Toaster } from 'react-hot-toast';
 
 function MyApp({ Component, pageProps }) {
-  //const [user] = useAuthState(auth)
+  const userData = useUserData();
 
   return (
-      <UserContext.Provider value={{ user:{}, username: 'jeff' }}>
-        <Navbar />
-        <Component {...pageProps} />
-        <Toaster />
-      </UserContext.Provider>
-  )
+    <UserContext.Provider value={userData}>
+      <Navbar />
+      <Component {...pageProps} />
+      <Toaster/>
+    </UserContext.Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;
